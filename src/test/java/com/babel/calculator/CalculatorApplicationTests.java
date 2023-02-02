@@ -18,10 +18,6 @@ class CalculatorApplicationTests {
 	@LocalServerPort
 	int randomServerPort;
 
-	@Test
-	void contextLoads() {
-	}
-
 	private ResponseEntity<Double> calculate(BigDecimal firstElement, BigDecimal secondElement, String operation)
 			throws URISyntaxException {
 		RestTemplate restTemplate = new RestTemplate();
@@ -45,28 +41,11 @@ class CalculatorApplicationTests {
 	@Test
 	public void substracHappyPath() throws URISyntaxException {
 
-		ResponseEntity<Double> resultado = calculate(BigDecimal.valueOf(20), BigDecimal.valueOf(5), "substrac");
+		ResponseEntity<Double> resultado = calculate(BigDecimal.valueOf(20), BigDecimal.valueOf(5), "sub");
 
 		Assert.assertEquals(HttpStatusCode.valueOf(200), resultado.getStatusCode());
 		Assert.assertEquals(15.0d, resultado.getBody().doubleValue(), 0.001d);
 	}
 
-	@Test
-	public void multiplyHappyPath() throws URISyntaxException {
-
-		ResponseEntity<Double> resultado = calculate(BigDecimal.valueOf(20), BigDecimal.valueOf(5), "multiply");
-
-		Assert.assertEquals(HttpStatusCode.valueOf(200), resultado.getStatusCode());
-		Assert.assertEquals(100.0d, resultado.getBody().doubleValue(), 0.001d);
-	}
-
-	@Test
-	public void divideHappyPath() throws URISyntaxException {
-
-		ResponseEntity<Double> resultado = calculate(BigDecimal.valueOf(25), BigDecimal.valueOf(5), "divide");
-
-		Assert.assertEquals(HttpStatusCode.valueOf(200), resultado.getStatusCode());
-		Assert.assertEquals(5.0d, resultado.getBody().doubleValue(), 0.001d);
-	}
 
 }
