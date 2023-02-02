@@ -1,4 +1,4 @@
-package com.babel.calculator.calculator;
+package com.babel.calculator;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
