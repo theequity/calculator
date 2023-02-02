@@ -1,9 +1,9 @@
 package com.babel.calculator.service;
 
-import com.babel.calculator.vo.CalculatorVO;
+import java.math.BigDecimal;
 
 public interface CalculatorService {
 
-	Double calculate(CalculatorVO calculatorVO);
+	Double calculate(BigDecimal firstElement, BigDecimal secopndElement, String operation);
 
 }
