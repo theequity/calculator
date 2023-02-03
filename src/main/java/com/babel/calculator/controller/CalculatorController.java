@@ -34,7 +34,7 @@ public class CalculatorController {
 		} catch (Exception e) {
 			response = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
 			tracer.trace(response);
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+			return response;
 		}
 		tracer.trace(result);
 		return ResponseEntity.ok(result.toString());
